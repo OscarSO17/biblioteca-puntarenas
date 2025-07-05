@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestros Servicios Bibliotecarios</title>
+
+  <!-- Fuente externa: Poppins para el texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Librería de íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Hoja de estilos específica para la página de servicios -->
+  <link rel="stylesheet" href="./css/servicios.css">
+</head>
+<body>
+
+<!-- Sección principal que muestra todos los servicios disponibles -->
+<section id="servicios" class="container">
+   <h2 style="text-align: center; width: 100%; margin-bottom: 2.5rem;">Nuestros Servicios Bibliotecarios</h2>
+
+   <!-- Grid con las tarjetas de servicios -->
+   <div class="servicios-grid">
+       <!-- Cada tarjeta representa un servicio. Al hacer clic se abre un modal -->
+       <div id="prestamo-sala" class="servicio-card card p-4" onclick="openModal('modal1')">
+           <div class="servicio-icon">📚</div>
+           <h3>Préstamo de libros en sala</h3>
+           <p>Los usuarios pueden consultar y leer libros dentro de las instalaciones de la biblioteca...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <!-- Repetición de tarjetas para los otros servicios -->
+       <div id="prestamo-domicilio" class="servicio-card card p-4" onclick="openModal('modal2')">
+           <div class="servicio-icon">🏠</div>
+           <h3>Préstamo de libros a domicilio</h3>
+           <p>Permite llevar libros a casa. Requiere afiliación previa...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div id="referencia-virtual" class="servicio-card card p-4" onclick="openModal('modal3')">
+           <div class="servicio-icon">💻</div>
+           <h3>Referencia virtual</h3>
+           <p>Atendemos consultas de información a través de nuestros canales digitales...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div id="archivo-documental" class="servicio-card card p-4" onclick="openModal('modal4')">
+           <div class="servicio-icon">🖋️</div>
+           <h3>Archivo documental</h3>
+           <p>Ofrecemos acceso a documentos y recursos históricos...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div id="sala-infantil" class="servicio-card card p-4" onclick="openModal('modal5')">
+           <div class="servicio-icon">🧸</div>
+           <h3>Sala Infantil</h3>
+           <p>Espacio dedicado a niñas y niños con acceso a libros infantiles...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div id="extension-bibliotecaria" class="servicio-card card p-4" onclick="openModal('modal6')">
+           <div class="servicio-icon">🚌</div>
+           <h3>Actividades de extensión bibliotecaria</h3>
+           <p>Realizamos visitas a comunidades para promover la lectura...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+
+       <div class="servicio-card card p-4" onclick="openModal('modal7')">
+           <div class="servicio-icon">🎭</div>
+           <h3>Actividades culturales y de formación virtuales</h3>
+           <p>Ofrecemos talleres y actividades culturales en línea...</p>
+           <button class="btn btn-outline-primary mt-2">Ver detalles</button>
+       </div>
+   </div>
+</section>
+
+<!-- Modales para mostrar detalles de cada servicio -->
+<!-- Cada modal tiene su propio ID y botón para cerrar -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>📚 Préstamo de libros en sala</h2>
+    <p>Los usuarios pueden consultar y leer libros dentro de las instalaciones de la biblioteca, sin necesidad de afiliación.</p>
+  </div>
+</div>
+
+<!-- Repetición del mismo formato para los demás modales -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>🏠 Préstamo de libros a domicilio</h2>
+    <p>Permite llevar libros a casa. Requiere afiliación previa, completando el siguiente formulario: <a href="https://forms.office.com/r/bQxGDnEBmt" target="_blank">Formulario de afiliación</a>.</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>💻 Referencia virtual</h2>
+    <p>Atendemos consultas de información a través de nuestros canales digitales: correo electrónico, Instagram, Facebook y WhatsApp. Un servicio ágil y accesible desde cualquier lugar.</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+    <h2>🖋️ Archivo documental</h2>
+    <p>Ofrecemos acceso a documentos y recursos históricos y especializados, disponibles para consulta en sala.</p>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+    <h2>🧸 Sala Infantil</h2>
+    <p>Espacio dedicado a niñas y niños con acceso a libros infantiles y actividades lúdicas. Se puede utilizar libremente durante el horario de atención.</p>
+  </div>
+</div>
+
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal6')">&times;</span>
+    <h2>🚌 Actividades de extensión bibliotecaria</h2>
+    <p>Realizamos visitas a comunidades, centros educativos y otros espacios para promover la lectura y el acceso a la información.</p>
+  </div>
+</div>
+
+<div id="modal7" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal7')">&times;</span>
+    <h2>🎭 Actividades culturales y de formación virtuales</h2>
+    <p>Ofrecemos talleres, cursos, cuentacuentos y otras actividades culturales y educativas en línea, dirigidas a personas de todas las edades.</p>
+  </div>
+</div>
+
+<!-- Script para manejar la apertura y cierre de los modales -->
+<script>
+  /**
+   * Muestra el modal correspondiente y bloquea el scroll del fondo.
+   */
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  
+  /**
+   * Cierra el modal y permite nuevamente el scroll en la página.
+   */
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+  
+  /**
+   * Si el usuario hace clic fuera del contenido del modal, se cierra.
+   */
+  window.onclick = function(event) {
+    if (event.target.className === "modal") {
+      event.target.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  }
+
+  /**
+   * Cuando la página carga con un hash en la URL, realiza un scroll suave y resalta la sección.
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+          // Aplica un efecto de resaltado temporal
+          target.classList.add('highlight-section');
+          setTimeout(() => {
+            target.classList.remove('highlight-section');
+          }, 2000);
+        }, 100);
+      }
+    }
+  });
+</script>
+
+<!-- Estilo para resaltar una sección al navegar con hash -->
+<style>
+  .highlight-section {
+    animation: highlight 2s ease;
+    box-shadow: 0 0 0 2px var(--accent-orange);
+  }
+  
+  @keyframes highlight {
+    0% { box-shadow: 0 0 0 10px var(--accent-orange); }
+    100% { box-shadow: 0 0 0 2px var(--accent-orange); }
+  }
+</style>
+
+<!-- Script para cargar el header y el footer dinámicamente -->
+<script>
+    // Cargar header desde archivo externo
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+        });
+
+    // Cargar footer desde archivo externo
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('body').insertAdjacentHTML('beforeend', data);
+        });
+</script>
+
+</body>
+</html>

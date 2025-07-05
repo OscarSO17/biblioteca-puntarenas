@@ -1,0 +1,554 @@
+/* style.css */
+.whatsapp-options {
+    display: flex;
+    gap: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+
+.whatsapp-options a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whatsapp-options span {
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+:root {
+    --primary-blue: #223f66; /* Un azul más oscuro para el SINABI */
+    --light-blue: #3d6a9e; /* Un azul más claro */
+    --accent-orange: #f28a00; /* El color naranja del "Pregúntale a la Biblioteca" */
+    --text-dark: #333;
+    --text-light: #f4f4f4; /* Blanco ligeramente suave para contraste */
+    --card-bg: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--primary-blue);
+    color: white;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-nav .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.top-nav .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.top-nav .nav-links {
+    /* Quitamos el margin-right: auto; para no interferir si no hay íconos superiores */
+    margin-left: auto; /* Alinea los enlaces a la derecha del logo */
+}
+
+.top-nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.top-nav .nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+/* Los estilos para .top-social-icons y .top-social-icons a han sido eliminados */
+
+/* Hero Section */
+.hero {
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 150px 20px 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Info Sections (Biblioteca, Actividades, Servicios) */
+.info-sections {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 5%;
+    background-color: var(--light-blue);
+    color: white;
+}
+
+.info-section-card {
+    padding: 30px;
+    width: 30%;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    background-color: var(--primary-blue);
+}
+
+.info-section-card h2 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.info-section-card p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Icono/Mensaje (anteriormente Lighthouse Section) */
+.lighthouse-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-light);
+    padding: 80px 5%;
+    gap: 40px;
+}
+
+.lighthouse-section img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+.lighthouse-section p {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--primary-blue);
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Contact Section (anteriormente News Section) */
+.news-section {
+    text-align: center;
+    padding: 60px 5%;
+    position: relative;
+    overflow: hidden;
+
+    /* Background Image for Contact Section */
+    background-image: url("../img/fondo2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* color: white; /* No definido aquí */
+}
+
+.news-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* La opacidad del overlay se mantiene en el estado original */
+    background: rgba(0, 0, 0, 0.5); /* Vuelve a 0.5 */
+    z-index: 1;
+}
+
+.news-section > h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding-left: 0;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    /* Vuelve al fondo blanco original */
+    background-color: var(--card-bg); /* #ffffff */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow-light);
+    text-align: left;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 2;
+}
+
+.form-intro {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    background-color: white; /* Fondo blanco sólido para los campos */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 25px auto 0;
+}
+
+.submit-button:hover {
+    background-color: var(--light-blue);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
+.footer .left-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer .left-content img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer .footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-nav a:hover {
+    color: var(--accent-orange);
+}
+
+/* Estilos para los ÍCONOS SOCIALES DEL FOOTER */
+.footer .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer .social-icons a {
+    color: var(--text-light); /* Usamos un color muy claro, casi blanco (#f4f4f4) para los íconos del footer */
+    font-size: 32px; /* Tamaño de los íconos del footer */
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social-icons a:hover {
+    color: var(--accent-orange);
+    transform: translateY(-3px);
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-blue);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+    border-bottom: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: white;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown .dropbtn {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .dropdown-content a {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 5%;
+    }
+
+    .top-nav .nav-links {
+        margin-top: 15px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .top-nav .nav-links a {
+        margin: 10px 0;
+    }
+
+    /* Los estilos para .top-social-icons en media query han sido eliminados */
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .info-sections {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 5%;
+    }
+
+    .info-section-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .lighthouse-section {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .lighthouse-section p {
+        font-size: 22px;
+    }
+
+    .news-section h2 {
+        font-size: 30px;
+    }
+
+    .contact-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .left-content {
+        margin-bottom: 15px;
+    }
+
+    .footer .footer-nav {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer .footer-nav a {
+        margin: 5px 0;
+    }
+
+    .footer .social-icons {
+        margin-top: 15px;
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    .info-section-card h2 {
+        font-size: 24px;
+    }
+    .info-section-card p {
+        font-size: 14px;
+    }
+    .lighthouse-section p {
+        font-size: 18px;
+    }
+    .news-section h2 {
+        font-size: 24px;
+    }
+    .contact-form-container {
+        padding: 15px;
+    }
+}
+.form-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+

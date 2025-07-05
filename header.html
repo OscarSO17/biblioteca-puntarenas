@@ -1,0 +1,64 @@
+<header class="top-nav">
+    <!-- Sección del logo institucional -->
+    <div class="logo">
+        <img src="img/logoSinabi.jpg" alt="SINABI Logo"> <!-- Imagen del logo -->
+        <span>Biblioteca Pública de Puntarenas</span> <!-- Nombre de la biblioteca -->
+    </div>
+
+    <!-- Menú de navegación principal -->
+    <nav class="nav-links">
+        <a href="index.html">Biblioteca</a> <!-- Enlace a la página principal -->
+        <a href="actividades.html">Actividades</a> <!-- Enlace a la página de actividades -->
+
+        <!-- Menú desplegable para servicios -->
+        <div class="dropdown">
+            <!-- Botón que abre/cierra el menú desplegable -->
+            <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">
+                Servicios <i class="dropdown-icon">▼</i>
+            </a>
+
+            <!-- Opciones del menú desplegable (inicialmente ocultas) -->
+            <div class="dropdown-content" id="servicesDropdown">
+                <a href="servicios.html#prestamo-sala">Préstamo en sala</a>
+                <a href="servicios.html#prestamo-domicilio">Préstamo a domicilio</a>
+                <a href="servicios.html#referencia-virtual">Referencia virtual</a>
+                <a href="servicios.html#archivo-documental">Archivo documental</a>
+                <a href="servicios.html#sala-infantil">Sala infantil</a>
+                <a href="servicios.html#extension-bibliotecaria">Extensión bibliotecaria</a>
+            </div>
+        </div>
+
+        <!-- Otros enlaces del menú -->
+        <a href="http://catalogo.sinabi.go.cr/opac" target="_blank">Catálogo</a> <!-- Enlace externo al catálogo -->
+        <a href="https://www.sinabi.go.cr/Transparencia/" target="_blank">Transparencia</a> <!-- Enlace externo a transparencia -->
+        <a href="index.html#contacto">Contacto</a> <!-- Enlace a la sección de contacto en la página principal -->
+    </nav>
+</header>
+
+<!-- Script para controlar el menú desplegable -->
+<script>
+    /**
+     * Muestra u oculta el menú desplegable de servicios.
+     */
+    function toggleDropdown() {
+        const dropdown = document.getElementById("servicesDropdown");
+        // Alterna entre mostrar y ocultar
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    /**
+     * Cierra el menú desplegable si el usuario hace clic fuera del botón.
+     */
+    window.onclick = function(event) {
+        // Si el clic no fue sobre el botón de menú
+        if (!event.target.matches('.dropbtn')) {
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none"; // Cierra el menú
+                }
+            }
+        }
+    }
+</script>

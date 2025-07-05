@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración de codificación y vista para dispositivos móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta etiquetas para SEO -->
+    <meta name="description" content="Biblioteca Pública de Puntarenas, Costa Rica. Un espacio cultural con libros, actividades, servicios y eventos para la comunidad.">
+    <meta name="keywords" content="Biblioteca Pública, Puntarenas, Costa Rica, libros, actividades culturales, servicios biblioteca, eventos Puntarenas">
+    <meta name="author" content="Biblioteca Pública de Puntarenas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Biblioteca Pública de Puntarenas</title>
+
+    <!-- Fuentes externas de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Íconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Estilos CSS locales -->
+    <link rel="stylesheet" href=".//css/style.css">
+
+    <!--
+        **Nota importante: La sección hero está mal ubicada dentro del <head>, 
+        debe ir dentro del <body>. Aquí está incluida por error.**
+    -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubre, Aprende y Conecta en tu Biblioteca Pública de Puntarenas.</h1>
+        </div>
+    </section>
+</head>
+<body>
+    <!-- Header se carga dinámicamente con fetch -->
+
+    <!-- Sección de información general con tarjetas -->
+    <section class="info-sections">
+        <!-- Tarjeta sobre la Biblioteca -->
+        <div class="info-section-card" id="biblioteca">
+            <h2>Biblioteca</h2>
+            <p>La Biblioteca Pública de Puntarenas es un espacio cultural y educativo para toda la comunidad. Ofrecemos una amplia colección de libros, recursos digitales y un ambiente acogedor para el estudio y la lectura.</p>
+        </div>
+
+        <!-- Tarjeta sobre actividades -->
+        <div class="info-section-card">
+            <h2>Actividades</h2>
+            <p>Participa en nuestras jornadas de lectura, talleres, y eventos culturales. Fomentamos la participación comunitaria y el amor por el conocimiento. ¡Explora nuestra agenda de actividades!</p>
+        </div>
+
+        <!-- Tarjeta sobre servicios -->
+        <div class="info-section-card" id="servicios">
+            <h2>Servicios</h2>
+            <p>Aquí puedes encontrar información sobre las iniciativas y proyectos especiales de la Biblioteca Pública de Puntarenas, así como programas de extensión cultural y digital.</p>
+        </div>
+    </section>
+
+    <!-- Sección con imagen y mensaje motivacional -->
+    <section class="lighthouse-section">
+        <img src="img/libro.png" alt="Icono de Libro">
+        <p>Tu conocimiento comienza aquí: Un espacio para el aprendizaje y la conexión.</p>
+    </section>
+
+    <!-- Sección de contacto con formulario -->
+    <section class="news-section" id="contacto">
+         <h2>Contáctanos</h2>
+        <div class="contact-form-container">
+            <p class="form-intro">Envíanos tus sugerencias o consultas. ¡Tu opinión es importante para nosotros!</p>
+
+            <!-- Formulario que envía datos vía mailto (sin backend) -->
+            <form class="contact-form" action="mailto:bppuntarenas@sinabi.go.cr" method="post" enctype="text/plain">
+                <!-- Campo para el nombre, obligatorio -->
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="Nombre" required>
+                </div>
+                <!-- Campo para correo electrónico, obligatorio y validado por HTML5 -->
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="Correo" required>
+                </div>
+                <!-- Campo teléfono, opcional -->
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="Telefono">
+                </div>
+                <!-- Campo país, opcional -->
+                <div class="form-group">
+                    <label for="pais">País</label>
+                    <input type="text" id="pais" name="Pais">
+                </div>
+                <!-- Campo para comentario, obligatorio -->
+                <div class="form-group">
+                    <label for="comentario">Comentario</label>
+                    <textarea id="comentario" name="Comentario" rows="5" required></textarea>
+                </div>
+                <!-- Botón para enviar el formulario -->
+                <button type="submit" class="submit-button">Enviar Sugerencia</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer se carga dinámicamente con fetch -->
+
+    <script>
+        // Carga el contenido del header desde un archivo externo y lo inserta al inicio del body
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+            });
+
+        // Carga el contenido del footer desde un archivo externo y lo inserta al final del body
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</body>
+</html>

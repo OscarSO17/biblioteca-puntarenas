@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividades - Biblioteca Pública de Puntarenas</title>
+
+  <!-- Fuente externa: Poppins para mejorar la apariencia del texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Librería de íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Hoja de estilos global del sitio -->
+  <link rel="stylesheet" href=".//css/style.css">
+
+  <!-- Hoja de estilos específica para la página de actividades -->
+  <link rel="stylesheet" href="./css/actividades.css" />
+</head>
+<body>
+
+  <!-- El header (menú de navegación) se cargará dinámicamente con JavaScript -->
+
+  <main>
+    <!-- Sección de introducción de actividades -->
+    <section id="intro-actividades">
+      <h2>Actividades</h2>
+      <p>
+        Participa en nuestras jornadas de lectura, talleres y eventos culturales.
+        Fomentamos la participación comunitaria y el amor por el conocimiento.
+        ¡Explora nuestra agenda de actividades!
+      </p>
+    </section>
+
+    <!-- Contenedor donde se mostrarán las tarjetas de eventos dinámicamente -->
+    <div id="eventos">Cargando eventos…</div>
+
+    <!-- Modal que se muestra al hacer clic en "Ver más" -->
+    <div id="modal" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <!-- Botón para cerrar el modal -->
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+
+        <!-- Título del evento -->
+        <h2 id="modalTitle" class="modal-titulo"></h2>
+
+        <!-- Sección de fechas del evento -->
+        <div class="modal-section"><h4>Fechas</h4><p id="modalDates"></p></div>
+
+        <!-- Sección de lugar del evento (puede ocultarse si está vacío) -->
+        <div class="modal-section" id="modalPlaceSection"><h4>Lugar</h4><p id="modalPlace"></p></div>
+
+        <!-- Sección de modalidad (virtual o presencial) -->
+        <div class="modal-section"><h4>Modalidad</h4><p id="modalMode"></p></div>
+
+        <!-- Sección de requisitos para participar -->
+        <div class="modal-section"><h4>Requisitos</h4><ul id="modalReqs"></ul></div>
+
+        <!-- Sección de grupos participantes -->
+        <div class="modal-section"><h4>Grupos</h4><ul id="modalGroups"></ul></div>
+
+        <!-- Sección de enlaces para inscripción -->
+        <div class="modal-section"><h4>Inscripción</h4><ul id="modalForms"></ul></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- El footer (pie de página) se cargará dinámicamente con JavaScript -->
+
+  <!-- Script con las funcionalidades de la página (carga y gestión de eventos) -->
+  <script src="./js/actividadesFunciones.js"></script>
+  
+  <!-- Script para cargar header y footer desde archivos externos -->
+  <script>
+    // Cargar el header desde un archivo externo y colocarlo al inicio del body
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+      });
+
+    // Cargar el footer desde un archivo externo y colocarlo al final del body
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('body').insertAdjacentHTML('beforeend', data);
+      });
+  </script>
+</body>
+</html>
